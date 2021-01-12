@@ -1,11 +1,10 @@
 ---
 title: "Urea metagenome Code for quality control, assembly, and predicting open reading frames"
 author: "Edna Chiang"
-date: "Last updated: Jan 11, 2021"
 output:
   html_document:
-  toc: true
-  toc_float: true
+    toc: true
+    toc_float: true
 ---
 
 ```{r, include=F}
@@ -23,7 +22,7 @@ Metagenome fastq files can be found under NCBI accession number INSERT_ACCESSION
   
 Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to evaluate the quality of the raw metagenome fastq files.
   
-The output html files are found [here](LINK).
+The output html files are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/fastqc/raw_reads/).
 ```{r, eval=F}
 # FastQC v0.11.8
 /path/to/fastqc /path/to/R1.fastq.gz /path/to/R2.fastq.gz -o /path/to/fastqc_output_raw
@@ -53,7 +52,7 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
   
 I ran Trimmomatic using the above adapter files and used Trimmomatic's recommended parameters.
   
-The output stats are found [here]().
+The output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/trimmomatic/trimmomatic.stats.txt).
 ```{r, eval=F}
 # Trimmomatic v0.38
 java -jar /path/to/trimmomatic-0.38.jar PE -threads 4 -trim.log /path/to/trimmomatic.log.txt /path/to/R1.fastq.gz /path/to/R2/fastqc.gz -baseout /path/to/trimmomatic/output/trimmed.fastq.gz ILLUMINACLIP:/path/to/adapter.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
@@ -72,7 +71,7 @@ Evaluate Trimmomatic output with [FastQC](https://www.bioinformatics.babraham.ac
   
 I followed [this tutorial by Matthias Scholz](https://sites.google.com/site/wiki4metagenomics/tools/short-read/remove-host-sequences) to remove host sequences using [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) and [samtools](http://www.htslib.org/).
   
-Bowtie2 output stats are found [here]()
+Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowtie2.stats.nohost.txt)
 
 ```{r, eval=F}
 ### Software Info ###
@@ -140,7 +139,7 @@ Use [MetaQUAST](http://quast.sourceforge.net/quast) to evaluate the quality of t
 # Evaluate assemblies with bowtie2
 Use [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) and [samtools](http://www.htslib.org/).
   
-bowtie2 output stats are found [here]()
+Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowite2.stats.assembly.txt)
 ```{r, eval=F}
 ### Software Info ###
 # Bowtie2 v2.2.2
