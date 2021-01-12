@@ -10,9 +10,9 @@
   
 ##### **Directories:**
 1. **output_files:** Metagenome stats
-  + **output_files/bowtie2:** Stats from bowtie2
-  + **output_files/fastqc:** Stats from FastQC
-  + **output_files/trimmomatic:** Stats from Trimmomatic
+    + **output_files/bowtie2:** Stats from bowtie2
+    + **output_files/fastqc:** Stats from FastQC
+    + **output_files/trimmomatic:** Stats from Trimmomatic
 
   
 ##### **Files**
