@@ -1,0 +1,26 @@
+E02
+Input Read Pairs: 24508585 Both Surviving: 23459639 (95.72%) Forward Only Surviving: 855491 (3.49%) Reverse Only Surviving: 144341 (0.59%) Dropped: 49114 (0.20%)
+
+E06
+Input Read Pairs: 39661914 Both Surviving: 37793385 (95.29%) Forward Only Surviving: 1670776 (4.21%) Reverse Only Surviving: 128538 (0.32%) Dropped: 69215 (0.17%)
+
+E07
+Input Read Pairs: 55513670 Both Surviving: 53020408 (95.51%) Forward Only Surviving: 2030245 (3.66%) Reverse Only Surviving: 328360 (0.59%) Dropped: 134657 (0.24%)
+
+S63
+Input Read Pairs: 36390482 Both Surviving: 34826942 (95.70%) Forward Only Surviving: 1284868 (3.53%) Reverse Only Surviving: 210768 (0.58%) Dropped: 67904 (0.19%)
+
+S66
+Input Read Pairs: 38682633 Both Surviving: 36864779 (95.30%) Forward Only Surviving: 1510823 (3.91%) Reverse Only Surviving: 217791 (0.56%) Dropped: 89240 (0.23%)
+
+S80
+Input Read Pairs: 24437421 Both Surviving: 23178523 (94.85%) Forward Only Surviving: 1061709 (4.34%) Reverse Only Surviving: 144203 (0.59%) Dropped: 52986 (0.22%)
+
+W56
+Input Read Pairs: 28204168 Both Surviving: 26926083 (95.47%) Forward Only Surviving: 1060138 (3.76%) Reverse Only Surviving: 165554 (0.59%) Dropped: 52393 (0.19%)
+
+W62
+Input Read Pairs: 28018264 Both Surviving: 26788502 (95.61%) Forward Only Surviving: 1008544 (3.60%) Reverse Only Surviving: 161403 (0.58%) Dropped: 59815 (0.21%)
+
+W64
+Input Read Pairs: 31840163 Both Surviving: 30323900 (95.24%) Forward Only Surviving: 1303554 (4.09%) Reverse Only Surviving: 151109 (0.47%) Dropped: 61600 (0.19%)
