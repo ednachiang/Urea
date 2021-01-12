@@ -8,7 +8,14 @@
   
 #### Information about this repository:  
   
-`Code.Rmd` and `Code.html` show code used to analyze metagenomes.  
-Steps include: evaluating metagenome quality, removing poor quality sequences, removing host DNA contamination, assembling metagenomes, evaluating assembly qualities, and predicting open reading frames.
+##### **Directories:**
+1. **output_files:** Metagenome stats
+  + **output_files/bowtie2:** Stats from bowtie2
+  + **output_files/fastqc:** Stats from FastQC
+  + **output_files/trimmomatic:** Stats from Trimmomatic
+
   
+##### **Files**
+1. `Code.RMD` and `Code.html`: Code used to analyze metagenomes, from evaluating metagenome quality through predicting open reading frames.
+
 **Note:**  This project is under the GNU general public license.
