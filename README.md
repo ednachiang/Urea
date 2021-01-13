@@ -5,6 +5,7 @@
 ##### Submitted to JOURNAL on DATE
   
 **********
+### [View metagenome analysis code here](https://rpubs.com/ednachiang/Urea)
   
 #### Information about this repository:  
   
