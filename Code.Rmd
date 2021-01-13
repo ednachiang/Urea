@@ -1,5 +1,5 @@
 ---
-title: "Urea metagenome Code for quality control, assembly, and predicting open reading frames"
+title: "Urea metagenome analysis code for quality control, assembly, and predicting open reading frames"
 author: "Edna Chiang"
 output:
   html_document:
@@ -13,7 +13,7 @@ library(kableExtra)
 
 # Overview
   
-This document describes the metagenomic analysis pipeline used in the paper PAPER_NAME_LINK. Steps from quality control to predicting open read frames are included.
+This document describes the metagenomic analysis pipeline used in the paper PAPER_NAME_LINK. Steps included range start with quality control and end with predicting open read frames are included.
   
 Metagenome fastq files can be found under NCBI accession number INSERT_ACCESSION.
 
@@ -32,7 +32,7 @@ The output html files are found [here](https://github.com/ednachiang/Urea/blob/m
   
 Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic).
   
-For adapters, I used the Trimmomatic TruSeq3 sequences and added one additional sequence that was overrepresented based on the FastQC outputs. Reverse read files for all samples (except W56) had the overrpresented sequence (string of G's)
+For adapters, I used the Trimmomatic TruSeq3 sequences and added one additional sequence that was overrepresented based on the FastQC outputs. Reverse read files for all samples (except W56) had the overrpresented sequence (string of G's).
 ```{r, eval=F}
 >PrefixPE/1
 TACACTCTTTCCCTACACGACGCTCTTCCGATCT
@@ -58,8 +58,8 @@ The output stats are found [here](https://github.com/ednachiang/Urea/blob/master
 java -jar /path/to/trimmomatic-0.38.jar PE -threads 4 -trim.log /path/to/trimmomatic.log.txt /path/to/R1.fastq.gz /path/to/R2/fastqc.gz -baseout /path/to/trimmomatic/output/trimmed.fastq.gz ILLUMINACLIP:/path/to/adapter.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 ```
 
-# Evaluate quality-trimmed metagenomes
-Evaluate Trimmomatic output with [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+# Evaluate quality-trimmed metagenome
+Evaluate Trimmomatic output with [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
   
 ```{r, eval=F}
 # FastQC v0.11.8
@@ -71,7 +71,7 @@ Evaluate Trimmomatic output with [FastQC](https://www.bioinformatics.babraham.ac
   
 I followed [this tutorial by Matthias Scholz](https://sites.google.com/site/wiki4metagenomics/tools/short-read/remove-host-sequences) to remove host sequences using [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) and [samtools](http://www.htslib.org/).
   
-Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowtie2.stats.nohost.txt)
+Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowtie2.stats.nohost.txt).
 
 ```{r, eval=F}
 ### Software Info ###
@@ -114,15 +114,15 @@ samtools view -@ 4 -bS /path/to/nohost.sam > /path/to/nohost.bam
 
 # Evaluate metagenome quality after host removal
   
-Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to evaluate the quality of the metagenome after host DNA removal
+Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to evaluate the quality of the metagenome after host DNA removal.
 ```{r, eval=F}
 # FastQC v0.11.8
 /path/to/fastqc /path/to/nohost.fastq -o /path/to/fastqc_output_nohost
 ```
 
-# Assemble metagenomes
+# Assemble metagenome
   
-Use [metaSPAdes](https://github.com/ablab/spades) to assemble metagenomes.
+Use [metaSPAdes](https://github.com/ablab/spades) to assemble metagenome.
   
 ```{r, eval=F}
 # SPAdes version 3.13.0
@@ -130,7 +130,7 @@ Use [metaSPAdes](https://github.com/ablab/spades) to assemble metagenomes.
 ```
 
 # Evaluate assembly quality with metaQUAST
-Use [MetaQUAST](http://quast.sourceforge.net/quast) to evaluate the quality of the assembled metagenome
+Use [MetaQUAST](http://quast.sourceforge.net/quast) to evaluate the quality of the assembled metagenome.
 ```{r, eval=F}
 # Quast v5.0.2
 /home/GLBRCORG/echiang3/metag/quast-5.0.2/metaquast.py -m 1 -t 20 /path/to/metaSPAdes_output/contigs.fasta -o /path/to/fastqc_metaSPAdes --max-ref-number 0
@@ -139,7 +139,7 @@ Use [MetaQUAST](http://quast.sourceforge.net/quast) to evaluate the quality of t
 # Evaluate assemblies with bowtie2
 Use [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) and [samtools](http://www.htslib.org/).
   
-Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowite2.stats.assembly.txt)
+Bowtie2 output stats are found [here](https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowite2.stats.assembly.txt).
 ```{r, eval=F}
 ### Software Info ###
 # Bowtie2 v2.2.2
@@ -162,7 +162,7 @@ bowtie2 --sensitive-local -p 10 --seed 1 -x /path/to/metaSPAdes.bowtie.database 
   
 # Predict open reading frames
   
-Use [prodigal](https://github.com/hyattpd/Prodigal) to predict open reading frames
+Use [prodigal](https://github.com/hyattpd/Prodigal) to predict open reading frames.
 ```{r, eval=F}
 # Prodigal v2.6.3
 /path/to/prodigal -a /path/to/output.faa -d /path/to/output.ffn -i /path/to/metaSPAdes_output/contigs.fasta -o /path/to/prodigal.txt -p meta -s /path/to/genes.txt
