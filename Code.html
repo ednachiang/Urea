@@ -1533,7 +1533,6 @@ div.tocify {
 <div id="evaluate-metagenome-quality" class="section level1">
 <h1>Evaluate metagenome quality</h1>
 <p>Use <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> to evaluate the quality of the raw metagenome fastq files.</p>
-<p>The output html files are found <a href="https://github.com/ednachiang/Urea/blob/master/output_files/fastqc/raw_reads/">here</a>.</p>
 <pre class="r"><code># FastQC v0.11.8
 /path/to/fastqc /path/to/R1.fastq.gz /path/to/R2.fastq.gz -o /path/to/fastqc_output_raw</code></pre>
 </div>
@@ -1556,7 +1555,6 @@ AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
 &gt;U_R2/2
 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</code></pre>
 <p>I ran Trimmomatic using the above adapter files and used Trimmomatic’s recommended parameters.</p>
-<p>The output stats are found <a href="https://github.com/ednachiang/Urea/blob/master/output_files/trimmomatic/trimmomatic.stats.txt">here</a>.</p>
 <pre class="r"><code># Trimmomatic v0.38
 java -jar /path/to/trimmomatic-0.38.jar PE -threads 4 -trim.log /path/to/trimmomatic.log.txt /path/to/R1.fastq.gz /path/to/R2/fastqc.gz -baseout /path/to/trimmomatic/output/trimmed.fastq.gz ILLUMINACLIP:/path/to/adapter.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36</code></pre>
 </div>
@@ -1570,7 +1568,6 @@ java -jar /path/to/trimmomatic-0.38.jar PE -threads 4 -trim.log /path/to/trimmom
 <div id="remove-host-dna-contamination" class="section level1">
 <h1>Remove host DNA contamination</h1>
 <p>I followed <a href="https://sites.google.com/site/wiki4metagenomics/tools/short-read/remove-host-sequences">this tutorial by Matthias Scholz</a> to remove host sequences using <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a> and <a href="http://www.htslib.org/">samtools</a>.</p>
-<p>Bowtie2 output stats are found <a href="https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowtie2.stats.nohost.txt">here</a>.</p>
 <pre class="r"><code>### Software Info ###
 # Bowtie2 v2.2.2
 # Samtools v0.1.19-44428cd
@@ -1629,7 +1626,6 @@ samtools view -@ 4 -bS /path/to/nohost.sam &gt; /path/to/nohost.bam
 <div id="evaluate-assemblies-with-bowtie2" class="section level1">
 <h1>Evaluate assemblies with bowtie2</h1>
 <p>Use <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a> and <a href="http://www.htslib.org/">samtools</a>.</p>
-<p>Bowtie2 output stats are found <a href="https://github.com/ednachiang/Urea/blob/master/output_files/bowtie2/bowite2.stats.assembly.txt">here</a>.</p>
 <pre class="r"><code>### Software Info ###
 # Bowtie2 v2.2.2
 # Samtools v0.1.19-44428cd
