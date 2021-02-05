@@ -15,7 +15,7 @@ library(kableExtra)
   
 This document describes the metagenomic analysis pipeline used in the paper PAPER_NAME_LINK. Steps included range start with quality control and end with predicting open read frames are included.
   
-Metagenome fastq files can be found under NCBI accession number INSERT_ACCESSION.
+Metagenome fastq files can be found under [NCBI BioProject PRJNA693524](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA693524).
 
 
 # Evaluate metagenome quality
