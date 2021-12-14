@@ -2,7 +2,7 @@
   
 #### **Authors:** Matthew D. Regan, Edna Chiang, Yunxi Liu, Marco Tonelli, Kristen M. Verdoorn, Sadie R. Gugel, Garret Suen, Hannah V. Carey, Fariba M. Assadi-Porter
   
-##### Submitted to JOURNAL on DATE
+##### Accepted by *Science* on Dec 2, 2021
   
 **********
 ### [View metagenome analysis code here](https://rpubs.com/ednachiang/Urea)
